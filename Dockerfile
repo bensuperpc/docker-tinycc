@@ -23,6 +23,8 @@ RUN apk add --no-cache musl-dev make
 
 COPY --from=builder /usr/local /usr/local
 
+ENV PATH="/usr/local/bin/bin:${PATH}"
+
 ENV CC=/usr/local/bin/tcc
 WORKDIR /usr/src/myapp
 
