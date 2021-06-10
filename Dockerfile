@@ -28,7 +28,10 @@ ENV PATH="/usr/local/bin:${PATH}"
 ENV CC=/usr/local/bin/tcc
 WORKDIR /usr/src/myapp
 
-CMD ["tcc", "-h"]
+# Test if compiler work
+RUN tcc -v
+
+CMD ["tcc", "-v"]
 
 LABEL org.label-schema.schema-version="1.0" \
 	  org.label-schema.build-date=$BUILD_DATE \
